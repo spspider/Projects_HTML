@@ -1,0 +1,122 @@
+/*html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,table,td,span { margin: 0; padding: 0; }*/
+
+body, html {
+	background: #262626 url("../../templates/alterside/images/bg.jpg");
+	color: #fff;
+	font-family: tahoma;
+	margin: 0; padding: 0;
+}
+
+h1, h2, h3, h4, h5 { line-height: normal; }
+
+a { color: #3b5163;}
+a:hover { text-decoration: none; }
+a img  { border: 0 none; }
+
+input, textarea, select, button, body { font: 13px/17px "Trebuchet MS", Arial, Helvetica, sans-serif; }
+input, textarea, select, button, a { outline: none; }
+
+/*инпуты*/
+textarea {
+	background-color:#1d1d1d;
+	border:1px solid #666666;
+	color: #ADADAD;
+}
+
+
+button, select, input {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-color:#1d1d1d;
+	border:1px solid #666666;
+	color: #ADADAD;
+	padding: 2px;
+}
+
+
+button:hover, select:hover, input:hover, textarea:hover {
+	background-color: #5A5A5A;
+}
+
+/*новости*/
+.shortstory {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #393939;
+	color: #fff;
+	border: 3px #1a1a1a solid;
+}
+
+.shortstory_panel {
+	background: #000;
+	color: #fff;
+	height: 35px;
+	font-size: 10px;
+}
+
+.shortstory_panel a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.shortstory_panel a:hover{
+	text-decoration: underline;
+}
+
+.shortstory_top{
+	background-image: url("../../templates/alterside/images/borderblack.jpg");
+	background-repeat: repeat-x;
+	height: 50px;
+	font-size: 15px;
+	background-position: bottom;
+}
+
+.com_top{
+	background-image: url("../../templates/alterside/images/borderblack.jpg");
+	background-repeat: repeat-x;
+	height: 25px;
+	background-position: bottom;
+}
+
+.com_bot{
+	background-image: url("../../templates/alterside/images/borderblack.jpg");
+	background-repeat: repeat-x;
+	height: 25px;
+	background-position: top;
+}
+
+.shortstory_top a, .com_bot a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.shortstory_top a:hover, .com_bot a:hover{
+	text-decoration: underline;
+}
+
+.shortstory_cat{
+	background: #353535;
+	border: 1px black solid;
+}
+
+.links{
+	height: 55px;
+	width: 62px;
+	background-image: url(../../templates/alterside/images/bg.png);
+ 	margin-right: -17px;
+}
+
+.story {
+	padding: 10px;
+}
+
+.fulstory {
+	padding: 10px 0px 10px 10px;
+}
+
+select#category {
+	background-color:  #efefed;
+}

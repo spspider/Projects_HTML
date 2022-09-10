@@ -1,0 +1,1 @@
+<?php $dbhost='localhost';$dbuser='root';$dbpassword='test';$dbname='test_site';?>

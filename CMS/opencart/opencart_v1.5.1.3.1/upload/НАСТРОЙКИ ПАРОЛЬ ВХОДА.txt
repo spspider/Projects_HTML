@@ -1,0 +1,61 @@
+Dear Customer,
+ 
+	Thank you for choosing our service to meet your web hosting needs.
+ 
+Your account has been created with the following details:
+ 
+Username:	kuply
+Password:	5506487
+Domain:		kuply.com.ua
+ 
+To log in immediately, follow this link, using your username and password:
+ 
+http://91.219.29.112:2222
+ 
+Once your domain resolves, you will be able to follow this link:
+ 
+http://www.kuply.com.ua:2222
+ 
+Bandwidth:	unlimited Megabytes
+Disk Space:	2000 Megabytes
+ 
+Virtual Domains:	2
+Subdomains:	unlimited
+ 
+POP Email Accounts:	unlimited
+Email Forwarders:	unlimited
+Email Autoresponders:	unlimited
+Email Mailing Lists:	unlimited
+POP Server:	mail.kuply.com.ua
+SMTP Server:	mail.kuply.com.ua
+Login:	kuply
+Password:	5506487
+ 
+FTP accounts:	unlimited
+Anonymous FTP:	OFF
+FTP Server:	ftp.kuply.com.ua
+Login:	kuply
+Password:	xe3b60jX
+ 
+IP:	91.219.29.112
+Use 91.219.29.112/~kuply to access it until the domain resolves.
+ 
+You must use these dns servers for your domain. They can be changed through your domain registrar.
+ 
+NS1:	kv5.uadomen.com
+NS1 IP:	91.219.29.110
+NS2:	kv6.uadomen.com
+NS2 IP:	91.219.29.118
+ 
+MySQL Databases:	1
+Domain Pointers:	1
+SSH Access:	OFF
+Secure Socket Layer:	OFF
+CGI:	OFF
+PHP:	ON
+DNS control:	ON
+ 
+Once again, thank you for choosing our hosting service
+Please don't hesitate to contact us if you have any questions
+ 
+ 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="windows-1251">
+    <file url="file://$PROJECT_DIR$/application/bootstrap.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/core/controller.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/core/link_connect.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/core/model.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/core/route.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/core/view.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/model/model_admin.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/data_field.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/inc/in_categories_delete.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/inc/mini_map_categories.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/inc/upload_pic_cat_integrated.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/index.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/table_of_goods.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/table_of_goods/in_categories_delete.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/table_of_goods/left_table_navigation.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/table_of_goods/main_table_category.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/table_of_goods/table_of_goods_tovar.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/tovar_detailed.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/tovar_detailed/characteristiks.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/tovar_detailed/detailed.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/tovar_detailed/inc/upload_pic_cat_integrated_photo.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/tovar_detailed/photo.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/tovar_detailed/statistics.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/admin/tovar_detailed/table_of_goods_tovar.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/general/main_view.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/panel/mini_map_categories.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/template_view.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/application/views/template_view_admin.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/autorization/bd.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/autorization/index.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/autorization/testreg.php" charset="windows-1251" />
+  </component>
+</project>
+

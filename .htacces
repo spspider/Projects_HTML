@@ -1,0 +1,7 @@
+﻿RewriteBase / 
+RewriteEngine on 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /home/u523012653/public_html/index.php?route=$1 [L,QSA]

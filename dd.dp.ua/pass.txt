@@ -1,0 +1,10 @@
+https://188.138.127.62:8083/edit/user/?user=dd
+dd
+5506487sp
+
+ftp:
+188.138.127.62:21
+
+php_my_admin
+dd_spspider
+5506487sp

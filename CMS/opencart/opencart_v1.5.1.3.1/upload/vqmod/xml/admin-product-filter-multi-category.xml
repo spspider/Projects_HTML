@@ -1,0 +1,63 @@
+<modification>
+        <id>Product Filter By Category</id>
+        <version>1.0</version>
+        <vqmver>2.0</vqmver>
+        <author>Saif</author>
+		
+		<file name="/admin/controller/catalog/product.php">
+                <operation>
+                        <search position="after"><![CDATA[
+                       	$url = '';
+                        ]]></search>
+                        
+                        <add><![CDATA[
+                       	  if (isset($this->request->get['filter_category'])) {										$url .= '&filter_category='. $this->request->get['filter_category'] ;		}
+                        ]]></add>
+                </operation>								<operation>
+                        <search position="after"><![CDATA[
+                       $this->data['filter_quantity'] = $filter_quantity;
+                        ]]></search>
+                        <add><![CDATA[						
+                       	$this->data['filter_category'] = $filter_category;
+                        ]]></add>
+                </operation>				<operation>
+                        <search position="after"><![CDATA[
+                      private function getList() {		
+                        ]]></search>
+                        <add><![CDATA[						
+                       if (isset($this->request->get['filter_category'])) {			$filter_category = explode('_',$this->request->get['filter_category']);		} else {			$filter_category = array();		}
+                        ]]></add>
+                </operation>				<operation>
+                        <search position="after"><![CDATA[
+                    $product_total = $this->model_catalog_product->getTotalProducts($data);
+                        ]]></search>
+                        <add><![CDATA[						
+                     $this->load->model('catalog/category');		$this->data['categories'] = $this->model_catalog_category->getCategories(0);
+                        ]]></add>
+                </operation>								<operation>
+                        <search position="after"><![CDATA[
+                    'filter_status'   => $filter_status,
+                        ]]></search>
+                        <add><![CDATA[					'filter_category' => $filter_category,
+                        ]]></add>
+                </operation>				<operation>
+                        <search position="before"><![CDATA[
+                    if ($result['image'] && file_exists(DIR_IMAGE . $result['image'])) {
+                        ]]></search>
+                        <add><![CDATA[					$category =  $this->model_catalog_product->getProductCategories($result['product_id']);
+                        ]]></add>
+                </operation>				<operation>
+                        <search position="before"><![CDATA[
+                    'quantity'   => $result['quantity'],
+                        ]]></search>
+                        <add><![CDATA[					'category'   => $category,
+                        ]]></add>
+                </operation>				<operation>
+                        <search position="before"><![CDATA[
+                   $this->data['column_quantity'] = $this->language->get('column_quantity');
+                        ]]></search>
+                        <add><![CDATA[					$this->data['column_category'] = $this->language->get('column_category');					$this->data['text_select_all'] = $this->language->get('text_select_all');					$this->data['text_unselect_all'] = $this->language->get('text_unselect_all');
+                        ]]></add>
+                </operation>
+        </file>		<file name="/admin/model/catalog/product.php">                <operation>                        <search position="before"><![CDATA[                      'p.quantity',                        ]]></search>                        <add><![CDATA[                       	'p2c.category',			                        ]]></add>                </operation>				<operation>                        <search position="before"><![CDATA[                     $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";                        ]]></search>                        <add><![CDATA[						                       $data['filter_category_id']=$data['filter_category'];						                        ]]></add>                </operation>				<operation>                        <search position="replace"><![CDATA[                   $sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";                        ]]></search>                        <add><![CDATA[													foreach ($data['filter_category_id'] as $category) {						$implode_data[] = "p2c.category_id = '" . (int)$category . "'";					}						 $sql .= " AND (" . implode(' OR ', $implode_data) . ")";		                        ]]></add>                </operation>		</file>		<file name="/admin/view/template/catalog/product_list.tpl">                <operation>                        <search position="before"><![CDATA[                     <td class="right"><?php if ($sort == 'p.quantity') { ?>                        ]]></search>                        <add><![CDATA[                     <td class="left"><?php echo $column_category; ?></td>			        ]]></add>                </operation>		                		</file>		<file name="/admin/language/english/catalog/product.php">                <operation>                        <search position="before"><![CDATA[						$_['entry_layout']           = 'Layout Override:'; 						]]></search>                        <add><![CDATA[                     $_['text_select_all']           = 'Select All'; 					 $_['text_unselect_all']           = 'Unselect All'; 					 $_['column_category']           = 'Category'; 			        ]]></add>                </operation>		</file>		<file name="/admin/view/template/catalog/product_list.tpl">                <operation>                        <search position="before"><![CDATA[              <td align="right"><input type="text" name="filter_quantity" value="<?php echo $filter_quantity; ?>" style="text-align: right;" /></td>                        ]]></search>                        <add><![CDATA[                     <td>										 <div class="scrollbox">                  <?php $class = 'odd'; ?>                  <?php foreach ($categories as $category) { ?>                  <?php $class = ($class == 'even' ? 'odd' : 'even'); ?>                  <div class="<?php echo $class; ?>">                    <?php if (in_array($category['category_id'], $filter_category)) { ?>                    <input type="checkbox" name="filter_category[]" value="<?php echo $category['category_id']; ?>" checked="checked" />                    <?php echo $category['name']; ?>                    <?php } else { ?>                    <input type="checkbox" name="filter_category[]" value="<?php echo $category['category_id']; ?>" />                    <?php echo $category['name']; ?>                    <?php } ?>                  </div>                  <?php } ?>                </div>				<a onclick="$(this).parent().find(':checkbox').attr('checked', true);"><?php echo $text_select_all; ?></a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);"><?php echo $text_unselect_all; ?></a>            </td>			        ]]></add>                </operation>				<operation>                        <search position="before"><![CDATA[							<td class="right"><?php if ($product['quantity'] <= 0) { ?>                        ]]></search>                        <add><![CDATA[                    <td class="left">                <?php foreach ($categories as $category) { ?>                <?php if (in_array($category['category_id'], $product['category'])) { ?>                <?php echo $category['name'];?><br>                <?php } ?> <?php } ?>              </div>            </td>			        ]]></add>                </operation>				<operation>                        <search position="before"><![CDATA[							var filter_quantity = $('input[name=\'filter_quantity\']').attr('value');                        ]]></search>                        <add><![CDATA[                				var filter_category = [];				$("input[name='filter_category[]']:checked").each(function(){filter_category.push($(this).val());});												filter_category=filter_category.join('_');								if (filter_category != '') {					url += '&filter_category=' + encodeURIComponent(filter_category);				}								]]></add>                </operation>		</file>
+</modification>
